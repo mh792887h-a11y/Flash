@@ -1,0 +1,28 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Light beam rays -->
+    <path
+        android:fillColor="#FFD60A"
+        android:pathData="M12,0L13.5,2h-3z" />
+    <path
+        android:fillColor="#FFD60A"
+        android:pathData="M4.5,2.5L6.5,4L5.2,5.5z" />
+    <path
+        android:fillColor="#FFD60A"
+        android:pathData="M19.5,2.5L18.8,5.5L17.5,4z" />
+    <!-- Flashlight body ON -->
+    <path
+        android:fillColor="#1C1C1E"
+        android:pathData="M6,5h12v3l-2,3v9c0,1.1 -0.9,2 -2,2h-4c-1.1,0 -2,-0.9 -2,-2V11L6,8V5z" />
+    <!-- Glowing lens -->
+    <path
+        android:fillColor="#FFD60A"
+        android:pathData="M7,6h10v2H7z" />
+    <!-- Active switch button -->
+    <path
+        android:fillColor="#FFD60A"
+        android:pathData="M11,13h2v3h-2z" />
+</vector>
