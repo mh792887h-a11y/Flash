@@ -40,8 +40,8 @@ class MainActivity : ComponentActivity() {
     private val notificationPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { _ ->
-        // Proceed with toggle regardless of notification permission result
-        FlashService.toggleService(this)
+        // Start service now that camera is granted
+        FlashService.startService(this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,6 +63,13 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun handleToggleClick() {
+        if (FlashManager.isFlashActive.value) {
+            // Turning OFF: instantly stop without asking any permissions
+            FlashService.stopService(this)
+            return
+        }
+
+        // Turning ON: check Camera permission
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             cameraPermissionLauncher.launch(Manifest.permission.CAMERA)
         } else {
@@ -77,7 +84,7 @@ class MainActivity : ComponentActivity() {
                 return
             }
         }
-        FlashService.toggleService(this)
+        FlashService.startService(this)
     }
 
     private fun observeState() {
@@ -115,11 +122,15 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun animateButton(scale: Float) {
-        btnFlashToggle.animate()
-            .scaleX(scale)
-            .scaleY(scale)
-            .setDuration(220)
-            .setInterpolator(OvershootInterpolator(2.0f))
-            .start()
+        try {
+            btnFlashToggle.animate()
+                .scaleX(scale)
+                .scaleY(scale)
+                .setDuration(220)
+                .setInterpolator(OvershootInterpolator(2.0f))
+                .start()
+        } catch (e: Exception) {
+            // Safe fallback
+        }
     }
 }

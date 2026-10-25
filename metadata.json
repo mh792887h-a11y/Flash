@@ -1,6 +1,6 @@
 {
   "name": "فلاش",
-  "description": "تطبيق فلاش Note 4 لتشغيل كشاف الكاميرا مع أصوات مضحكة ومستمرة واختصار للأزرار العلوية",
+  "description": "تطبيق فلاش Note 4 لتشغيل كشاف الكاميرا واختصار للأزرار العلوية",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

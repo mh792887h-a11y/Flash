@@ -2,9 +2,9 @@
     <string name="app_name">فلاش</string>
     <string name="flash_word">فلاش</string>
     <string name="notification_channel_name">خدمة فلاش Note 4</string>
-    <string name="notification_channel_desc">إشعار استمرار تشغيل كشاف الكاميرا والصوتيات في الخلفية</string>
-    <string name="notification_title">فلاش Note 4 مشتغل</string>
-    <string name="notification_text">الفلاش والصوتيات المضحكة قيد التشغيل</string>
+    <string name="notification_channel_desc">إشعار استمرار تشغيل كشاف الكاميرا في الخلفية</string>
+    <string name="notification_title">فلاش Note 4</string>
+    <string name="notification_text">الفلاش قيد التشغيل</string>
     <string name="action_turn_off">إطفاء الفلاش</string>
     <string name="tile_label">فلاش</string>
     <string name="desc_flash_toggle">زر تشغيل وإطفاء الفلاش</string>

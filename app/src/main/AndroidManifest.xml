@@ -10,7 +10,6 @@
 
     <!-- Foreground service permissions -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
 
     <!-- Notification permission for Android 13+ -->
@@ -46,12 +45,12 @@
             </intent-filter>
         </activity>
 
-        <!-- Foreground Service for continuous flash and funny sounds in background / lock screen -->
+        <!-- Foreground Service for continuous flash and audio in background / lock screen -->
         <service
             android:name=".FlashService"
             android:enabled="true"
             android:exported="false"
-            android:foregroundServiceType="camera|mediaPlayback" />
+            android:foregroundServiceType="mediaPlayback" />
 
         <!-- Quick Settings Tile for top panel quick toggle (next to Wi-Fi / Mobile Data) -->
         <service
